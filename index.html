@@ -1,0 +1,324 @@
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Уведомление об оплате</title>
+    <base href="/" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      html,
+      body {
+        height: auto;
+        min-height: 100%;
+      }
+      body {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      @font-face {
+        font-family: Circe;
+        src: url(circe-bold-webfont.27529df664ce2f0e.woff2) format("woff2"),
+          url(circe-bold-webfont.a6d441f673662776.woff) format("woff");
+        font-weight: 700;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: Circe;
+        src: url(circe-regular-webfont.70e2ea4fb032224b.woff2) format("woff2"),
+          url(circe-regular-webfont.01fbe67cb561e424.woff) format("woff");
+        font-weight: 400;
+        font-style: normal;
+      }
+      body {
+        background-color: #f5f1e8;
+        font-family: Circe, sans-serif;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="styles.3d8e4694ae75c154.css"
+      media="all"
+      onload="this.media='all'"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+                  default-src 'self'  https://yastatic.net http://yastatic.net;
+                  img-src * 'self' data: https: https://mc.yandex.ru;
+                  script-src https://mc.yandex.ru https://yastatic.net https://captcha-api.yandex.ru 'self' 'nonce-723442';
+                  connect-src 'self' data: https://mc.yandex.ru;
+                  style-src 'self' 'unsafe-inline' *;
+                  "
+    />
+    <style>
+      .back-to-history-page-button[_ngcontent-ng-c1611979560] {
+        margin-top: 24px;
+      }
+      .logo[_ngcontent-ng-c1611979560] {
+        text-align: center;
+        margin: 16px 0;
+      }
+      .content[_ngcontent-ng-c1611979560] {
+        padding: 0 16px;
+      }
+    </style>
+    <style>
+      .ticket[_ngcontent-ng-c1432496674] {
+        margin-top: 39px;
+      }
+      .ticket__payment-timer[_ngcontent-ng-c1432496674]
+        p[_ngcontent-ng-c1432496674]
+        strong[_ngcontent-ng-c1432496674] {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 32px;
+      }
+      .ticket__qrcode[_ngcontent-ng-c1432496674] {
+        margin: 31px 0;
+        text-align: center;
+      }
+      .ticket__button[_ngcontent-ng-c1432496674] {
+        margin-bottom: 32px;
+      }
+    </style>
+    <style>
+      .payment-info-details[_ngcontent-ng-c2808523327] {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        margin-bottom: 32px;
+        font-family: Circe, sans-serif;
+        color: #1d1346;
+      }
+      .payment-info-details__vehicle-type[_ngcontent-ng-c2808523327] {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .payment-info-details__price-header[_ngcontent-ng-c2808523327] {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 700;
+        margin-bottom: 9px;
+      }
+      .payment-info-details__price[_ngcontent-ng-c2808523327] {
+        font-size: 48px;
+        line-height: 54px;
+        font-weight: 700;
+        margin-bottom: 17px;
+      }
+      .payment-info-details__rouble[_ngcontent-ng-c2808523327] {
+        font-weight: 400;
+      }
+      .payment-info-details__vehicle-number[_ngcontent-ng-c2808523327] {
+        font-weight: 350;
+        font-size: 16px;
+        color: #b5b5b5;
+      }
+      .payment-info-details__vehicle-number[_ngcontent-ng-c2808523327]
+        span[_ngcontent-ng-c2808523327] {
+        font-weight: 400;
+      }
+      .payment-info-details__order-number[_ngcontent-ng-c2808523327] {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 32px;
+      }
+      .payment-info-details__order-number[_ngcontent-ng-c2808523327]
+        span[_ngcontent-ng-c2808523327] {
+        font-weight: 400;
+      }
+      .payment-info-details_margin-bottom_24[_ngcontent-ng-c2808523327] {
+        margin-bottom: 24px;
+      }
+    </style>
+    <style>
+      .trip-details[_ngcontent-ng-c3367612953] {
+        margin-bottom: 35px;
+      }
+      .trip-details_margin-bottom_8[_ngcontent-ng-c3367612953] {
+        margin-bottom: 8px;
+      }
+      .display_block[_ngcontent-ng-c3367612953] {
+        display: block;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <app-root _nghost-ng-c2445345205="" ng-version="16.2.12"
+      ><router-outlet _ngcontent-ng-c2445345205=""></router-outlet
+      ><app-wrapper _nghost-ng-c1611979560=""
+        ><div _ngcontent-ng-c1611979560="" class="wrapper">
+          <app-header _ngcontent-ng-c1611979560="" _nghost-ng-c814738787=""
+            ><header _ngcontent-ng-c814738787="">
+              <h1 _ngcontent-ng-c814738787="">Уведомление об оплате</h1>
+            </header></app-header
+          ><!----><!---->
+          <div _ngcontent-ng-c1611979560="" class="logo">
+            <img
+              _ngcontent-ng-c1611979560=""
+              src="https://qr.bilet.nspk.ru/assets/images/logo.svg"
+              alt="Система Быстрых Платежей"
+            />
+          </div>
+          <div _ngcontent-ng-c1611979560="" class="content">
+            <router-outlet _ngcontent-ng-c1611979560=""></router-outlet
+            ><app-result _nghost-ng-c3250961982=""
+              ><div
+                _ngcontent-ng-c3250961982=""
+                class="text-block text-block_text-align_center"
+              >
+                <p _ngcontent-ng-c3250961982="">Ваш проезд успешно оплачен!</p>
+              </div>
+              <app-ticket _ngcontent-ng-c3250961982="" _nghost-ng-c1432496674=""
+                ><div _ngcontent-ng-c1432496674="" class="ticket">
+                  <app-payment-info-details
+                    _ngcontent-ng-c1432496674=""
+                    _nghost-ng-c2808523327=""
+                    ><div
+                      _ngcontent-ng-c2808523327=""
+                      class="payment-info-details"
+                    >
+                      <div
+                        _ngcontent-ng-c2808523327=""
+                        class="payment-info-details__vehicle-type"
+                      >
+                        <div id="transport"></div>
+                      </div>
+                      <div
+                        _ngcontent-ng-c2808523327=""
+                        class="payment-info-details__price"
+                        class="qwerty"
+                      >
+                        <div id="price"></div>
+                      </div>
+                      <!----><!---->
+                      <div
+                        _ngcontent-ng-c2808523327=""
+                        class="payment-info-details__date"
+                      >
+                        <div id="date"></div>
+                      </div>
+                      <div
+                        _ngcontent-ng-c2808523327=""
+                        class="payment-info-details__vehicle-number"
+                      >
+                        <div id="ts"></div>
+                      </div>
+                      <!----><!---->
+                    </div></app-payment-info-details
+                  >
+                  <div
+                    _ngcontent-ng-c1432496674=""
+                    class="text-block text-block_text-align_center text-block_margin-bottom_14 ticket__payment-timer"
+                  >
+                    <p _ngcontent-ng-c1432496674="">
+                      С момента оплаты прошло:<br
+                        _ngcontent-ng-c1432496674=""
+                      /><strong _ngcontent-ng-c1432496674=""
+                        ><div
+                          id="timer"
+                          style="
+                            font-family: Circe, sans-serif;
+                            text-align: center;
+                            color: #1d1346;
+                            font-weight: 700;
+                            font-size: 32px;
+                            line-height: 32px;
+                          "
+                        >
+                          00:00
+                        </div>
+                      </strong>
+                    </p>
+                  </div>
+                  <div _ngcontent-ng-c1432496674="" class="ticket__qrcode">
+                    <qrcode
+                      _ngcontent-ng-c1432496674=""
+                      errorcorrectionlevel="L"
+                      arialabel="url"
+                      colorlight="#F5F1E8"
+                      elementtype="canvas"
+                      title="Билет"
+                      ><div class="qrcode"><img src="qr.png" /></div
+                    ></qrcode>
+                  </div>
+                  <app-trip-details
+                    _ngcontent-ng-c1432496674=""
+                    styleclass="text-block_text-align_center"
+                    _nghost-ng-c3367612953=""
+                    ><div
+                      _ngcontent-ng-c3367612953=""
+                      class="trip-details text-block text-block_text-align_center"
+                    >
+                      <p _ngcontent-ng-c3367612953="">
+                        Серия билета:
+                        <!----><!----><strong _ngcontent-ng-c3367612953=""
+                          >QR200938000277<!----><!----></strong
+                        >
+                      </p>
+                      <!---->
+                      <p _ngcontent-ng-c3367612953="">
+                        Номер билета:
+                        <!----><!----><strong _ngcontent-ng-c3367612953=""
+                          >20250329063142462<!----><!----></strong
+                        >
+                      </p>
+                      <!----><!---->
+                    </div></app-trip-details
+                  >
+                  <div
+                    _ngcontent-ng-c1432496674=""
+                    class="text-block text-block_text-align_center text-block_margin-bottom_35"
+                  >
+                    <p _ngcontent-ng-c1432496674="">
+                      Предъявите контролеру QR-код.<br
+                        _ngcontent-ng-c1432496674=""
+                      />
+                      Чтобы сохранить реквизиты билета, нажмите кнопку «Скачать»
+                    </p>
+                  </div>
+                  <div _ngcontent-ng-c1432496674="" class="ticket__button">
+                    <app-button
+                      _ngcontent-ng-c1432496674=""
+                      classname="tst_download_ticket"
+                      ><div class="for-button">
+                        <button
+                          class="for-button__button tst_download_ticket"
+                          id="add"
+                        >
+                          Скачать билет<!----></button
+                        ><!----><!---->
+                      </div>
+                      <!----></app-button
+                    >
+                  </div>
+                  <!---->
+                </div></app-ticket
+              ><!----><!----><!----></app-result
+            ><!---->
+          </div>
+        </div></app-wrapper
+      ><!----></app-root
+    >
+    <div class="ipt" id="ipt">
+      <input type="text" value="Транспорт" id="trans_input" />
+      <input type="text" value="Цена" id="price_input" />
+      <input type="text" value="Дата пробел время" id="date_input" />
+      <input type="text" value="Т/С" id="ts_input" />
+      <button id="btt">Сгенерировать</button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
